@@ -1,5 +1,6 @@
 import fs from 'file-system';
 import path from 'path';
+import styles from './estadisticas.module.css';
 
 export default async function Estadisticas() {
   const filePath = path.join(process.cwd(), 'src', 'app', 'components', 'ObjPersonas', 'personas.json');
@@ -19,21 +20,21 @@ export default async function Estadisticas() {
   const personasMenorEdad = personas.filter(persona => Number(persona.edad) === minEdad);
 
   return (
-    <div>
-      <h1>Estadísticas Generales</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Estadísticas Generales</h1>
 
-      <h2>Número de personas mayores de 35 años: </h2>
+      <h2 className={styles.subtitle}>Número de personas mayores de 35 años:</h2>
       <p>{mayoresDe35.length}</p>
 
-      <h2>Persona(s) de mayor edad ({maxEdad} años):</h2>
-      <ul>
+      <h2 className={styles.subtitle}>Persona(s) de mayor edad ({maxEdad} años):</h2>
+      <ul className={styles.statsList}>
         {personasMayorEdad.map(persona => (
           <li key={persona.id}>{persona.nombre} {persona.apellido}</li>
         ))}
       </ul>
 
-      <h2>Persona(s) de menor edad ({minEdad} años):</h2>
-      <ul>
+      <h2 className={styles.subtitle}>Persona(s) de menor edad ({minEdad} años):</h2>
+      <ul className={styles.statsList}>
         {personasMenorEdad.map(persona => (
           <li key={persona.id}>{persona.nombre} {persona.apellido}</li>
         ))}
