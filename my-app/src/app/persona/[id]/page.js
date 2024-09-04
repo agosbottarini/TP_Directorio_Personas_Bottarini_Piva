@@ -11,7 +11,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Estadisticas({ params }) {
+export default async function Personas({ params }) {
   const { id } = params;
 
   const filePath = path.join(process.cwd(), 'src', 'app', 'components',  'ObjPersonas', 'personas.json');
@@ -26,7 +26,7 @@ export default async function Estadisticas({ params }) {
 
   return (
     <div>
-      <h1>Estadísticas de {personaSeleccionada.nombre}</h1>
+      <h1>Datos de {personaSeleccionada.nombre}</h1>
       <p>Apellido: {personaSeleccionada.apellido}</p>
       <p>Edad: {personaSeleccionada.edad}</p>
       <p>Email: {personaSeleccionada.email}</p>
