@@ -35,6 +35,8 @@
   border-radius: 5px;
   background-color: #f9f9f9;
   text-align: center;
+  color: black;      
+  text-decoration: none; 
 }
 
 .gridItem a {
@@ -45,3 +47,4 @@
 .gridItem a:hover {
   color: #0070f3;
 }
+

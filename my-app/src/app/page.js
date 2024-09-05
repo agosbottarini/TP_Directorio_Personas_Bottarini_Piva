@@ -1,3 +1,4 @@
+
 import fs from 'file-system';
 import path from 'path';
 import Link from 'next/link';
@@ -13,11 +14,11 @@ export default async function Home() {
       <h1 className={styles.title}>Lista de Personas</h1>
       <ul className={styles.grid}>
         {personas.map(persona => (
+           <Link href={`/persona/${persona.id}`}>
           <li key={persona.id} className={styles.gridItem}>
-            <Link href={`/persona/${persona.id}`}>
-              {persona.nombre}
-            </Link>
+             {persona.nombre}
           </li>
+          </Link>
         ))}
       </ul>
     </div>
